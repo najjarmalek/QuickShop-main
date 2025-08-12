@@ -65,7 +65,9 @@ const Orders = () => {
                     ))}
                 </div>
             </div>}
+            <hr />
             <Footer />
+            <br />
         </div>
     );
 };

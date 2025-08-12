@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useAppContext } from "@/context/AppContext";
 import toast from "react-hot-toast";
 import axios from "axios";
+import Footer from "@/components/seller/Footer";
 
 const AddProduct = () => {
 
@@ -26,23 +27,23 @@ const AddProduct = () => {
     formData.append('description',description)
     formData.append('category',category)
     formData.append('price',price)
-    formData.append('name',offerPrice)
+    formData.append('offerPrice',offerPrice)
 
     for (let i = 0; i < files.length; i++) {
-      formData.append('image',files[i] )
+      formData.append('images',files[i] )
       
     }
     try {
       const token=await getToken()
       const {data} = await axios.post('api/product/add',formData,{headers:{Authorization:`Bearer ${token}`}})
       if (data.success) {
-        toast.success(data.message)
-        setFiles([])
-        setName('')
-        setDescription('')
-        setCategory('Earphone')
-        setPrice('')
-        setOfferPrice('')
+        toast.success(data.message);
+        setFiles([]);
+        setName('');
+        setDescription('');
+        setCategory('Earphone');
+        setPrice('');
+        setOfferPrice('');
       }else{
         toast.error(data.message);
       }
@@ -156,7 +157,6 @@ const AddProduct = () => {
               className="outline-none md:py-2.5 py-2 px-3 rounded border border-gray-500/40"
               onChange={(e) => setOfferPrice(e.target.value)}
               value={offerPrice}
-              required
             />
           </div>
         </div>
@@ -164,9 +164,10 @@ const AddProduct = () => {
           ADD
         </button>
       </form>
-      {/* <Footer /> */}
+      <hr />
+      <Footer /> 
+      <br />
     </div>
   );
 };
-
 export default AddProduct;
