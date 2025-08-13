@@ -53,3 +53,10 @@ export const syncUserDeletion=inngest.createFunction(
         await User.findByIdAndDelete(id)
     }
 )
+
+
+export const createUserOrder =inngest.createFunction(
+    {
+        id:'create-user-order'
+    }
+)
