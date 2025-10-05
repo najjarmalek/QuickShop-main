@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import { assets, BagIcon, BoxIcon, CartIcon, HomeIcon} from "@/assets/assets";
+import { assets, BagIcon, BoxIcon, CartIcon, HomeIcon, SearchIcon} from "@/assets/assets";
 import Link from "next/link"
 import { useAppContext } from "@/context/AppContext";
 import Image from "next/image";
@@ -25,6 +25,9 @@ const Navbar = () => {
         </Link>
         <Link href="/all-products" className="hover:text-gray-900 transition">
           Shop
+        </Link>
+        <Link href="/search" className="hover:text-gray-900 transition">
+          Search
         </Link>
         <Link href="#footer" className="hover:text-gray-900 transition">
           About Us
@@ -62,6 +65,7 @@ const Navbar = () => {
           <UserButton.MenuItems>
             <UserButton.Action label="Home" labelIcon={<HomeIcon/>} onClick={()=>router.push('/')}/>
           </UserButton.MenuItems>
+          
           <UserButton.MenuItems>
             <UserButton.Action label="Products" labelIcon={<BoxIcon/>} onClick={()=>router.push('/all-products')}/>
           </UserButton.MenuItems>
