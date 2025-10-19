@@ -68,7 +68,9 @@ const Navbar = () => {
           <UserButton.MenuItems>
             <UserButton.Action label="Home" labelIcon={<HomeIcon/>} onClick={()=>router.push('/')}/>
           </UserButton.MenuItems>
-          
+          <UserButton.MenuItems>
+            <UserButton.Action label="Search" labelIcon={<SearchIcon/>} onClick={()=>router.push('/search')}/>
+          </UserButton.MenuItems>
           <UserButton.MenuItems>
             <UserButton.Action label="Products" labelIcon={<BoxIcon/>} onClick={()=>router.push('/all-products')}/>
           </UserButton.MenuItems>
